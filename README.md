@@ -1,14 +1,12 @@
 # Arduino Keypad I2C interface library #
-F4GOJ Christophe f4goj@free.fr
+F4GOJ Christophe f4goj@free.fr September 2014
 
-September 2014
-
-![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
-
-[74C922 datasheet](https://github.com/F4GOJ/Keypad_I2C/blob/master/images/mm54c923.pdf)<br>
-[PCF8574 datasheet](https://github.com/F4GOJ/Keypad_I2C/blob/master/images/PCF8574.pdf) 
+MM74C922N datasheet at http://www.ti.com/lit/ds/symlink/mm54c923.pdf<br>
+PCF8574 datasheet at http://www.nxp.com/documents/data_sheet/PCF8574.pdf
 
 Use this library freely.
+
+![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
 ## Hardware connections ##
 #####Keypad to Arduino :
