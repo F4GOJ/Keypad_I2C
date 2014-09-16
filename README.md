@@ -35,8 +35,7 @@ Keypad_I2C KPD;
 ![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
 ## Hardware connections ##
-
-###Keypad to Arduino :
+#####Keypad to Arduino :
 
 - J1-1 -> D2 or D3
 - J1-2 -> +5V
@@ -44,15 +43,15 @@ Keypad_I2C KPD;
 - J1-4 -> A5
 - J1-5 -> Ground
 
-###Expansion I2C port :
+#####Expansion I2C port :
 
 - J2-1 -> Ground
 - J2-2 -> SCL
 - J2-3 -> SDA
 - J2-4 -> +5V
 
-## Functions : ##
 
+## Functions : ##
 ###begin(int i2c_addr, int int_pin)
 #####Description
 Initialize the output pins and master reset the AD9850
