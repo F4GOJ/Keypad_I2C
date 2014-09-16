@@ -31,9 +31,8 @@ To use the **Keypad_I2C** library:
 - Uncompress the downloaded file.  This will result in a folder containing all the files for the library, that has a name that includes the branch name, usually **Keypad_I2C-master**.
 - Rename the folder to  **Keypad_I2C**.
 - Copy the renamed folder to the Arduino sketchbook\libraries folder.
-<br><br>
-## Usage notes ##
 
+## Usage notes ##
 You have to instantiate a **my_keypad_name** object.
 
 Keypad_I2C my_keypad_name(int i2c_addr, int int_pin);
