@@ -32,27 +32,28 @@ Keypad_I2C KPD;
 ```
 ## Hardware connections : ##
 
-![keypad_i2c](h datasheet at )
+![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
 - Vcc -> 5V
 - SDA -> A4
 - SCL -> A5
 - GND -> Ground
+- DAV -> 2 or 3
 
 ## Functions : ##
 
-###begin(int i2c_addr)
+###begin(int i2c_addr, int int_pin)
 #####Description
 Initialize the output pins and master reset the AD9850
 #####Syntax
-`KPD.begin(i2c_addr);`
+`KPD.begin(i2c_addr, int_pin);`
 #####Parameters
-**i2c_addr :** I2C address of tge interface *(int)*<br>
+**i2c_addr :** I2C address of the interface *(int)*<br>
 #####Returns
 None.
 #####Example
 ```c++
 void setup(){
- KPD.begin(0x26);
+ KPD.begin(0x26, 2);
 }
 ```
