@@ -7,7 +7,7 @@ F4GOJ Christophe f4goj@free.fr
 September 2014
 
 74C922 datasheet at http://www.analog.com/static/imported-files/data_sheets/AD9850.pdf<br>
-PCF8574 datasheet at 
+[PCF8574 datasheet](https://github.com/F4GOJ/Keypad_I2C/blob/master/images/PCF8574.pdf) 
 
 Use this library freely.
 
