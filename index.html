@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Keypad i2c : Keypad I2C interface library for Arduino">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Keypad i2c</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/F4GOJ/Keypad_I2C">View on GitHub</a>
+
+          <h1 id="project_title">Keypad i2c</h1>
+          <h2 id="project_tagline">Keypad I2C interface library for Arduino</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/F4GOJ/Keypad_I2C/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/F4GOJ/Keypad_I2C/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="arduino-keypad-i2c-interface-library" class="anchor" href="#arduino-keypad-i2c-interface-library"><span class="octicon octicon-link"></span></a>Arduino Keypad I2C interface library</h1>
+
+<p>F4GOJ Christophe <a href="mailto:f4goj@free.fr">f4goj@free.fr</a> September 2014</p>
+
+<p>MM74C922N datasheet at <a href="http://www.ti.com/lit/ds/symlink/mm54c923.pdf">http://www.ti.com/lit/ds/symlink/mm54c923.pdf</a><br>
+PCF8574 datasheet at <a href="http://www.nxp.com/documents/data_sheet/PCF8574.pdf">http://www.nxp.com/documents/data_sheet/PCF8574.pdf</a></p>
+
+<p>Use this library freely.</p>
+
+<p><img src="https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png" alt="keypad_i2c"></p>
+
+<h2>
+<a name="hardware-connections" class="anchor" href="#hardware-connections"><span class="octicon octicon-link"></span></a>Hardware connections</h2>
+
+<h5>
+<a name="keypad-to-arduino-" class="anchor" href="#keypad-to-arduino-"><span class="octicon octicon-link"></span></a>Keypad to Arduino :</h5>
+
+<ul>
+<li>J1-1 -&gt; D2 or D3</li>
+<li>J1-2 -&gt; +5V</li>
+<li>J1-3 -&gt; A4</li>
+<li>J1-4 -&gt; A5</li>
+<li>J1-5 -&gt; Ground</li>
+</ul><h5>
+<a name="expansion-i2c-port-" class="anchor" href="#expansion-i2c-port-"><span class="octicon octicon-link"></span></a>Expansion I2C port :</h5>
+
+<ul>
+<li>J2-1 -&gt; Ground</li>
+<li>J2-2 -&gt; SCL</li>
+<li>J2-3 -&gt; SDA</li>
+<li>J2-4 -&gt; +5V
+<br><br>
+</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>To use the <strong>Keypad_I2C</strong> library:  </p>
+
+<ul>
+<li>Go to <a href="https://github.com/F4GOJ/Keypad_I2C">https://github.com/F4GOJ/Keypad_I2C</a>, click the <a href="https://github.com/F4GOJ/Keypad_I2C/archive/master.zip">Download ZIP</a> button and save the ZIP file to a convenient location on your PC.</li>
+<li>Uncompress the downloaded file.  This will result in a folder containing all the files for the library, that has a name that includes the branch name, usually <strong>Keypad_I2C-master</strong>.</li>
+<li>Rename the folder to  <strong>Keypad_I2C</strong>.</li>
+<li>Copy the renamed folder to the Arduino sketchbook\libraries folder.</li>
+</ul><h2>
+<a name="usage-notes" class="anchor" href="#usage-notes"><span class="octicon octicon-link"></span></a>Usage notes</h2>
+
+<p>You have to instantiate a <strong>my_keypad_name</strong> object.</p>
+
+<p>Keypad_I2C my_keypad_name(int i2c_addr, int int_pin);</p>
+
+<h5>
+<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h5>
+
+<p><strong>i2c_addr :</strong> I2C address of the interface <em>(int)</em><br><strong>int_pin :</strong> Input pin 2 or 3 to attach the interrupt <em>(int)</em></p>
+
+<div class="highlight highlight-c++"><pre><span class="cp">#include &lt;Keypad_I2c.h&gt;    </span><span class="c1">//http://github.com/F4GOJ/Keypad_I2C</span>
+
+<span class="n">Keypad_I2C</span> <span class="nf">KPD</span><span class="p">(</span><span class="mh">0x26</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+
+<p><br><br></p>
+
+<h2>
+<a name="functions-" class="anchor" href="#functions-"><span class="octicon octicon-link"></span></a>Functions :</h2>
+
+<h3>
+<a name="begin" class="anchor" href="#begin"><span class="octicon octicon-link"></span></a>begin()</h3>
+
+<h5>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h5>
+
+<p>Initialize and attach interrupt to the input pin, begins the wire connection.</p>
+
+<h5>
+<a name="syntax" class="anchor" href="#syntax"><span class="octicon octicon-link"></span></a>Syntax</h5>
+
+<p><code>KPD.begin();</code></p>
+
+<h5>
+<a name="parameters-1" class="anchor" href="#parameters-1"><span class="octicon octicon-link"></span></a>Parameters</h5>
+
+<p>None.</p>
+
+<h5>
+<a name="returns" class="anchor" href="#returns"><span class="octicon octicon-link"></span></a>Returns</h5>
+
+<p>None.</p>
+
+<h5>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h5>
+
+<div class="highlight highlight-c++"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+ <span class="n">KPD</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>
+<a name="getkey" class="anchor" href="#getkey"><span class="octicon octicon-link"></span></a>getKey()</h3>
+
+<h5>
+<a name="description-1" class="anchor" href="#description-1"><span class="octicon octicon-link"></span></a>Description</h5>
+
+<p>Get key pressed.</p>
+
+<h5>
+<a name="syntax-1" class="anchor" href="#syntax-1"><span class="octicon octicon-link"></span></a>Syntax</h5>
+
+<p><code>KPD.getKey();</code></p>
+
+<h5>
+<a name="parameters-2" class="anchor" href="#parameters-2"><span class="octicon octicon-link"></span></a>Parameters</h5>
+
+<p>None.</p>
+
+<h5>
+<a name="returns-1" class="anchor" href="#returns-1"><span class="octicon octicon-link"></span></a>Returns</h5>
+
+<p>The code of the key pressed or 0 if no new key has been pressed. <em>(char)</em></p>
+
+<h5>
+<a name="example-1" class="anchor" href="#example-1"><span class="octicon octicon-link"></span></a>Example</h5>
+
+<div class="highlight highlight-c++"><pre><span class="n">ch</span> <span class="o">=</span> <span class="n">KPD</span><span class="p">.</span><span class="n">getKey</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ch</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+ <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>
+<a name="getkeynum" class="anchor" href="#getkeynum"><span class="octicon octicon-link"></span></a>getKeyNum()</h3>
+
+<h5>
+<a name="description-2" class="anchor" href="#description-2"><span class="octicon octicon-link"></span></a>Description</h5>
+
+<p>Get only numerical key pressed.</p>
+
+<h5>
+<a name="syntax-2" class="anchor" href="#syntax-2"><span class="octicon octicon-link"></span></a>Syntax</h5>
+
+<p><code>KPD.getKeyNum();</code></p>
+
+<h5>
+<a name="parameters-3" class="anchor" href="#parameters-3"><span class="octicon octicon-link"></span></a>Parameters</h5>
+
+<p>None.</p>
+
+<h5>
+<a name="returns-2" class="anchor" href="#returns-2"><span class="octicon octicon-link"></span></a>Returns</h5>
+
+<p>The code of the numerical key pressed or 0 if no new key has been pressed. <em>(char)</em></p>
+
+<h5>
+<a name="example-2" class="anchor" href="#example-2"><span class="octicon octicon-link"></span></a>Example</h5>
+
+<div class="highlight highlight-c++"><pre><span class="n">ch</span> <span class="o">=</span> <span class="n">KPD</span><span class="p">.</span><span class="n">getKeyNum</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ch</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+ <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Keypad i2c maintained by <a href="https://github.com/F4GOJ">F4GOJ</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
