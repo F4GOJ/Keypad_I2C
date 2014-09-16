@@ -1,6 +1,3 @@
-kpd_i2c
-=======
-
 # Arduino Keypad I2C interface library #
 F4GOJ Christophe f4goj@free.fr
 
