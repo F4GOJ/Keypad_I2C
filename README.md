@@ -30,11 +30,11 @@ Keypad_I2C my_keypad_name;
 
 Keypad_I2C KPD;
 ```
-## Schematic :##
+## Schematic ##
 
 ![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
-## Hardware connections : ##
+## Hardware connections ##
 
 ###Keypad to Arduino :
 
