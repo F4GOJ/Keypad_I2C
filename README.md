@@ -64,7 +64,7 @@ void setup(){
  KPD.begin();
 }
 ```
-<br><br>
+
 ###getKey()
 #####Description
 Get key pressed.
@@ -81,7 +81,7 @@ if(ch != 0){
  Serial.print(ch);
 }
 ```
-<br><br>
+
 ###getKeyNum()
 #####Description
 Get only numerical key pressed.
