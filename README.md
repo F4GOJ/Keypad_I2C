@@ -30,15 +30,26 @@ Keypad_I2C my_keypad_name;
 
 Keypad_I2C KPD;
 ```
-## Hardware connections : ##
+## Schematic :##
 
 ![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
-- Vcc -> 5V
-- SDA -> A4
-- SCL -> A5
-- GND -> Ground
-- DAV -> 2 or 3
+## Hardware connections : ##
+
+###Keypad to Arduino :
+
+- J1-1 -> D2 or D3
+- J1-2 -> +5V
+- J1-3 -> A4
+- J1-4 -> A5
+- J1-5 -> Ground
+
+###Expansion I2C port :
+
+- J2-1 -> Ground
+- J2-2 -> SCL
+- J2-3 -> SDA
+- J2-4 -> +5V
 
 ## Functions : ##
 
