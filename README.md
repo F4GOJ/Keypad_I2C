@@ -49,7 +49,7 @@ Keypad_I2C KPD;
 - J2-2 -> SCL
 - J2-3 -> SDA
 - J2-4 -> +5V
-
+<br><br>
 
 ## Functions : ##
 ###begin(int i2c_addr, int int_pin)
