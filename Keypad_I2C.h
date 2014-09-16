@@ -5,14 +5,12 @@
  *
  * Use this library freely
  *
- * Hardware connections : 
- *
  * Instance :
  * Keypad_I2C kpd(int i2c_addr, int int_pin); // i2c_addr I2C address of the keypad adapter
  *                                            // int_pin interrupt input pin D2 or D3
  *
  * Functions :
- * kpd.begin(); Initialize the output pins and master reset the AD9850 
+ * kpd.begin();
  * kpd.getKey(); 
  * kpd.getKeyNum();
  *
