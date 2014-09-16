@@ -31,32 +31,70 @@ To use the **Keypad_I2C** library:
 - Uncompress the downloaded file.  This will result in a folder containing all the files for the library, that has a name that includes the branch name, usually **Keypad_I2C-master**.
 - Rename the folder to  **Keypad_I2C**.
 - Copy the renamed folder to the Arduino sketchbook\libraries folder.
-
+<br><br>
 ## Usage notes ##
 
-Instantiate a **my_keypad_name** object.
+You have to instantiate a **my_keypad_name** object.
 
-Keypad_I2C my_keypad_name;
+Keypad_I2C my_keypad_name(int i2c_addr, int int_pin);
+
+#####Parameters
+**i2c_addr :** I2C address of the interface *(int)*<br>
+**int_pin :** Input pin 2 or 3 to attach the interrupt *(int)*
 
 ```c++
 #include <Keypad_I2c.h>    //http://github.com/F4GOJ/Keypad_I2C
 
-Keypad_I2C KPD;
+Keypad_I2C KPD(0x26, 2);
 ```
-
+<br><br>
 ## Functions : ##
-###begin(int i2c_addr, int int_pin)
+###begin()
 #####Description
-Initialize the output pins and master reset the AD9850
+Initialize and attach interrupt to the input pin, begins the wire connection.
 #####Syntax
-`KPD.begin(i2c_addr, int_pin);`
+`KPD.begin();`
 #####Parameters
-**i2c_addr :** I2C address of the interface *(int)*<br>
+None.
 #####Returns
 None.
 #####Example
 ```c++
 void setup(){
- KPD.begin(0x26, 2);
+ KPD.begin();
+}
+```
+<br><br>
+###getKey()
+#####Description
+Get key pressed.
+#####Syntax
+`KPD.getKey();`
+#####Parameters
+None.
+#####Returns
+The code of the key pressed or 0 if no new key has been pressed. *(char)*
+#####Example
+```c++
+ch = KPD.getKey();
+if(ch != 0){
+ Serial.print(ch);
+}
+```
+<br><br>
+###getKeyNum()
+#####Description
+Get only numerical key pressed.
+#####Syntax
+`KPD.getKeyNum();`
+#####Parameters
+None.
+#####Returns
+The code of the numerical key pressed or 0 if no new key has been pressed. *(char)*
+#####Example
+```c++
+ch = KPD.getKeyNum();
+if(ch != 0){
+ Serial.print(ch);
 }
 ```
