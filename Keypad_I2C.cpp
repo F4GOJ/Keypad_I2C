@@ -51,7 +51,7 @@ void Keypad_I2C::keyread(){
 char Keypad_I2C::getKey (){
    if(newkey == 1){
     Wire.requestFrom(I2C_ADDR, 1);
-    keycode = Wire.read();
+    keycode = Wire.read() & 0x0f;
     newkey = 0;
    return keymap[keycode];
   }
@@ -61,7 +61,7 @@ char Keypad_I2C::getKey (){
 char Keypad_I2C::getKeyNum (){
  if(newkey == 1){
   Wire.requestFrom(I2C_ADDR, 1);
-  keycode = Wire.read();
+  keycode = Wire.read() & 0x0f;
   newkey = 0;
   int tempkey = keymap[keycode] - '0';
   if( tempkey >= 0 && tempkey <= 9){
