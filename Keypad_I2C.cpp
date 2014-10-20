@@ -41,7 +41,7 @@ void Keypad_I2C::begin() {
 void Keypad_I2C::begin_priv() {
 	pinMode(INT_PIN, INPUT);
 	Wire.begin();
-	attachInterrupt(0, keyread, FALLING);
+	attachInterrupt(1, keyread, FALLING);
 }
 
 void Keypad_I2C::keyread(){
