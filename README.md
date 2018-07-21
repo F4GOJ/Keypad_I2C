@@ -9,7 +9,7 @@ Use this library freely.
 ![keypad_i2c](https://raw.githubusercontent.com/F4GOJ/Keypad_I2C/master/images/keypad_i2c_sch.png)
 
 ## Hardware connections ##
-#####Keypad to Arduino :
+##### Keypad to Arduino :
 
 - J1-1 -> D2 or D3
 - J1-2 -> +5V
@@ -17,7 +17,7 @@ Use this library freely.
 - J1-4 -> A5
 - J1-5 -> Ground
 
-#####Expansion I2C port :
+##### Expansion I2C port :
 
 - J2-1 -> Ground
 - J2-2 -> SCL
@@ -37,7 +37,7 @@ You have to instantiate a **my_keypad_name** object.
 
 Keypad_I2C my_keypad_name(int i2c_addr, int int_pin);
 
-#####Parameters
+##### Parameters
 **i2c_addr :** I2C address of the interface *(int)*<br>
 **int_pin :** Input pin 2 or 3 to attach the interrupt *(int)*
 
@@ -48,32 +48,32 @@ Keypad_I2C KPD(0x26, 2);
 ```
 <br><br>
 ## Functions : ##
-###begin()
-#####Description
+### begin()
+##### Description
 Initialize and attach interrupt to the input pin, begins the wire connection.
-#####Syntax
+##### Syntax
 `KPD.begin();`
-#####Parameters
+##### Parameters
 None.
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void setup(){
  KPD.begin();
 }
 ```
 
-###getKey()
-#####Description
+### getKey()
+##### Description
 Get key pressed.
-#####Syntax
+##### Syntax
 `KPD.getKey();`
-#####Parameters
+##### Parameters
 None.
-#####Returns
+##### Returns
 The code of the key pressed or 0 if no new key has been pressed. *(char)*
-#####Example
+##### Example
 ```c++
 ch = KPD.getKey();
 if(ch != 0){
@@ -81,16 +81,16 @@ if(ch != 0){
 }
 ```
 
-###getKeyNum()
-#####Description
+### getKeyNum()
+##### Description
 Get only numerical key pressed.
-#####Syntax
+##### Syntax
 `KPD.getKeyNum();`
-#####Parameters
+##### Parameters
 None.
-#####Returns
+##### Returns
 The code of the numerical key pressed or 0 if no new key has been pressed. *(char)*
-#####Example
+##### Example
 ```c++
 ch = KPD.getKeyNum();
 if(ch != 0){
